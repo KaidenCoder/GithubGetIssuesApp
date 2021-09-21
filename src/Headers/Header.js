@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark, faCaretDown, faCodeBranch, faEye, faStar } from '@fortawesome/free-solid-svg-icons'
+import { API_REPO } from '../APIS/constants'
 
 const Header = () => {
 
     const [repovalue, setRepoValue] = useState({})
 
     useEffect(() => {
-        fetch("https://api.github.com/repos/octocat/Hello-World")
+        fetch(API_REPO)
         .then(response => response.json())
         .then(data => setRepoValue(data))
     }, [])

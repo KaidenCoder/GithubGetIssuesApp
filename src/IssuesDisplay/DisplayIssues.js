@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faDotCircle } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookMessenger} from '@fortawesome/free-brands-svg-icons';
 import '../App.css'
+import { API_ISSUES } from '../APIS/constants';
 
 const DisplayIssues = () => {
 
     const [issues, setIssues] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.github.com/repos/octocat/hello-world/issues")
+        fetch(API_ISSUES)
         .then(res => res.json())
         .then(data => setIssues(data));
     }, [])
