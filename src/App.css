@@ -6,6 +6,10 @@
   flex-direction: row;
 }
 
+.border:hover{
+  background: rgba(0,0,0,0.1);
+}
+
 input {
   /* width: 100%; */
   margin: 1em;
